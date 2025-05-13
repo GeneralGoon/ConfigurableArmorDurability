@@ -31,6 +31,12 @@ class Mod implements IPostDBLoadMod
                 item._props.MaxDurability = (item._props.MaxDurability * this.modConfig.insertDurabilityMult);
                 item._props.BluntThroughput = (item._props.BluntThroughput * this.modConfig.insertBluntDamageMult);
             }
+            if (itemHelper.isOfBaseclass(item._id, BaseClasses.ARMORED_EQUIPMENT))
+            {
+                item._props.Durability = (item._props.Durability * this.modConfig.plateDurabilityMult);
+                item._props.MaxDurability = (item._props.MaxDurability * this.modConfig.plateDurabilityMult);
+                item._props.BluntThroughput = (item._props.BluntThroughput * this.modConfig.plateBluntDamageMult);
+            }
         }
     }
 }
